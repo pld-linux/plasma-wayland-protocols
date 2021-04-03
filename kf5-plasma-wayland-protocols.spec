@@ -2,31 +2,30 @@
 %define         qtver           5.9.0
 %define         kfname          plasma-wayland-protocols
 
-Name:		kf5-%{kfname}
-Group:		Library
-Version:	1.1.1
-Release:	0.1
 Summary:	Plasma Specific Protocols for Wayland
-
-License:	GPLv2+
-URL:		https://invent.kde.org/libraries/%{kfname}.git
+Name:		kf5-%{kfname}
+Version:	1.1.1
+Release:	1
+License:	GPL v2+
+Group:		Libraries
 Source0:	https://download.kde.org/stable/%{kfname}/%{version}/%{kfname}-%{version}.tar.xz
 # Source0-md5:	82207f4df5e4a91452339bcf7b983d7e
-
+URL:		https://invent.kde.org/libraries/%{kfname}.git
 BuildRequires:	kf5-extra-cmake-modules
-#BuildRequires:	qt5-qtbase-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_debugsource_packages	0
 
 %description
 Plasma Specific Protocols for Wayland
 
-%package	devel
+%package devel
 Summary:	Development files for %{name}
 Requires:	%{name} = %{version}-%{release}
 
-%description	devel
+%description devel
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
-
 
 %prep
 %setup -q -n %{kfname}-%{version}
@@ -35,13 +34,16 @@ developing applications that use %{name}.
 install -d build
 cd build
 %cmake -G Ninja \
-        -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-        ../
+		-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+		../
 %ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
@@ -50,4 +52,3 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_libdir}/cmake/PlasmaWaylandProtocols/
-
