@@ -4,12 +4,12 @@
 
 Summary:	Plasma Specific Protocols for Wayland
 Name:		kf5-%{kfname}
-Version:	1.3.0
+Version:	1.4.0
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	https://download.kde.org/stable/%{kfname}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	ff5193b515decd1eb8393fed1cfa5bf3
+# Source0-md5:	5dac96531a31660ba03b58d41b3d81d5
 URL:		https://invent.kde.org/libraries/%{kfname}.git
 BuildRequires:	kf5-extra-cmake-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
