@@ -6,7 +6,7 @@ Summary:	Plasma Specific Protocols for Wayland
 Summary(pl.UTF-8):	Specyficzne dla Plasmy protokoły dla Waylanda
 Name:		kf5-%{kfname}
 Version:	1.9.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+, MIT, BSD
 Group:		Libraries
 Source0:	https://download.kde.org/stable/plasma-wayland-protocols/%{kfname}-%{version}.tar.xz
