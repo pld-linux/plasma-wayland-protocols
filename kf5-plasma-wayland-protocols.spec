@@ -1,16 +1,14 @@
-%define         kdeframever     5.73
-%define         qtver           5.9.0
 %define         kfname          plasma-wayland-protocols
 
 Summary:	Plasma Specific Protocols for Wayland
 Summary(pl.UTF-8):	Specyficzne dla Plasmy protokoły dla Waylanda
 Name:		kf5-%{kfname}
-Version:	1.11.1
+Version:	1.12.0
 Release:	1
 License:	LGPL v2.1+, MIT, BSD
 Group:		Libraries
 Source0:	https://download.kde.org/stable/plasma-wayland-protocols/%{kfname}-%{version}.tar.xz
-# Source0-md5:	9a62a2c48ec78c19ab8a339bcd8bdddd
+# Source0-md5:	7755dcac14e90068a7e26922c3a4a296
 URL:		https://invent.kde.org/libraries/plasma-wayland-protocols.git
 BuildRequires:	cmake >= 3.5
 BuildRequires:	kf5-extra-cmake-modules >= 5.69.0
@@ -29,6 +27,7 @@ Specyficzne dla Plasmy protokoły dla Waylanda.
 %package devel
 Summary:	Development files for Plasma Wayland Protocols
 Summary(pl.UTF-8):	Pliki programistyczne protokołów Waylanda dla Plasmy
+Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
@@ -48,6 +47,7 @@ cd build
 %cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
+
 %ninja_build
 
 %install
