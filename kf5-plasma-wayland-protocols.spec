@@ -3,15 +3,15 @@
 Summary:	Plasma Specific Protocols for Wayland
 Summary(pl.UTF-8):	Specyficzne dla Plasmy protokoły dla Waylanda
 Name:		kf5-%{kfname}
-Version:	1.12.0
+Version:	1.13.0
 Release:	1
 License:	LGPL v2.1+, MIT, BSD
 Group:		Libraries
 Source0:	https://download.kde.org/stable/plasma-wayland-protocols/%{kfname}-%{version}.tar.xz
-# Source0-md5:	7755dcac14e90068a7e26922c3a4a296
+# Source0-md5:	5d30de6367ab1ff92b2ece7b159b3c8b
 URL:		https://invent.kde.org/libraries/plasma-wayland-protocols.git
 BuildRequires:	cmake >= 3.5
-BuildRequires:	kf5-extra-cmake-modules >= 5.69.0
+BuildRequires:	kf6-extra-cmake-modules >= 5.69.0
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
