@@ -28,6 +28,7 @@ Summary:	Development files for Plasma Wayland Protocols
 Summary(pl.UTF-8):	Pliki programistyczne protokołów Waylanda dla Plasmy
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	kf5-plasma-wayland-protocols-devel < 1.13.0
 
 %description devel
 This package contains the development files for applications that use
@@ -38,7 +39,7 @@ Ten pakiet zawiera pliki do rozwijania aplikacji wykorzystujących
 protokoły Waylanda dla Plasmy.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 install -d build
