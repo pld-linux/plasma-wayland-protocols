@@ -1,19 +1,18 @@
-%define         kfname          plasma-wayland-protocols
-
 Summary:	Plasma Specific Protocols for Wayland
 Summary(pl.UTF-8):	Specyficzne dla Plasmy protokoły dla Waylanda
-Name:		kf5-%{kfname}
+Name:		plasma-wayland-protocols
 Version:	1.13.0
 Release:	1
 License:	LGPL v2.1+, MIT, BSD
 Group:		Libraries
-Source0:	https://download.kde.org/stable/plasma-wayland-protocols/%{kfname}-%{version}.tar.xz
+Source0:	https://download.kde.org/stable/plasma-wayland-protocols/%{name}-%{version}.tar.xz
 # Source0-md5:	5d30de6367ab1ff92b2ece7b159b3c8b
 URL:		https://invent.kde.org/libraries/plasma-wayland-protocols.git
 BuildRequires:	cmake >= 3.5
 BuildRequires:	kf6-extra-cmake-modules >= 5.69.0
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.736
+Obsoletes:	kf5-plasma-wayland-protocols < 1.13.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_debugsource_packages	0
@@ -39,7 +38,7 @@ Ten pakiet zawiera pliki do rozwijania aplikacji wykorzystujących
 protokoły Waylanda dla Plasmy.
 
 %prep
-%setup -q -n %{kfname}-%{version}
+%setup -q -n %{name}-%{version}
 
 %build
 install -d build
