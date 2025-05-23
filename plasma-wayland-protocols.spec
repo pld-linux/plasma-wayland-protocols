@@ -1,12 +1,12 @@
 Summary:	Plasma Specific Protocols for Wayland
 Summary(pl.UTF-8):	Specyficzne dla Plasmy protokoły dla Waylanda
 Name:		plasma-wayland-protocols
-Version:	1.16.0
-Release:	2
+Version:	1.18.0
+Release:	1
 License:	LGPL v2.1+, MIT, BSD
 Group:		Libraries
 Source0:	https://download.kde.org/stable/plasma-wayland-protocols/%{name}-%{version}.tar.xz
-# Source0-md5:	48b8d5d34d9284b1ab01b9b6aa45571b
+# Source0-md5:	a9345ad81b25e896c5b902b408b14ba0
 URL:		https://invent.kde.org/libraries/plasma-wayland-protocols.git
 BuildRequires:	cmake >= 3.5
 BuildRequires:	kf6-extra-cmake-modules >= 5.69.0
