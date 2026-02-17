@@ -1,21 +1,20 @@
 Summary:	Plasma Specific Protocols for Wayland
 Summary(pl.UTF-8):	Specyficzne dla Plasmy protokoły dla Waylanda
 Name:		plasma-wayland-protocols
-Version:	1.19.0
+Version:	1.20.0
 Release:	1
 License:	LGPL v2.1+, MIT, BSD
 Group:		Libraries
 Source0:	https://download.kde.org/stable/plasma-wayland-protocols/%{name}-%{version}.tar.xz
-# Source0-md5:	24401e9261bac3b87ec07abb10b7e7d8
+# Source0-md5:	f3d2af90621e6e28fdc3a5836b5c7689
 URL:		https://invent.kde.org/libraries/plasma-wayland-protocols.git
 BuildRequires:	cmake >= 3.5
 BuildRequires:	kf6-extra-cmake-modules >= 5.69.0
 BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.736
 Obsoletes:	kf5-plasma-wayland-protocols < 1.13.0
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%global debug_package %{nil}
 
 %description
 Plasma Specific Protocols for Wayland.
@@ -29,6 +28,7 @@ Summary(pl.UTF-8):	Pliki programistyczne protokołów Waylanda dla Plasmy
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	kf5-plasma-wayland-protocols-devel < 1.13.0
+BuildArch:	noarch
 
 %description devel
 This package contains the development files for applications that use
@@ -65,4 +65,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/cmake/PlasmaWaylandProtocols
+%{_datadir}/cmake/PlasmaWaylandProtocols
